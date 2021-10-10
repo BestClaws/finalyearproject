@@ -1,0 +1,198 @@
+<html>
+
+<head>
+
+  <link rel="stylesheet" href="styles/common.css">
+
+  <link rel="stylesheet" href="styles/splash_screen.css">
+  <link rel="stylesheet" href="styles/register_screen.css">
+  <link rel="stylesheet" href="styles/main_screen.css">
+
+  <link rel="stylesheet" href="styles/upload_tab.css">
+  <link rel="stylesheet" href="styles/packages_tab.css">
+
+  <link rel="stylesheet" href="styles/config_tab.css">
+
+  <!-- Insert this line above script imports  -->
+  <script>
+    if (typeof module === 'object') {
+      window.module = module; module = undefined;
+    }
+  </script>
+
+
+  <script src="scripts/jquery.min.js"></script>
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="titlebar">
+      <ul class="buttons" style="visibility: hidden;">
+        <li>=</li>
+        <li>O</li>
+        <li>X</li>
+      </ul>
+      <span class="title">Client App</span>
+      <ul class="buttons">
+        <li id="minimize_app">
+          <ion-icon name="ios-remove" id="minimize_app"></ion-icon>
+        </li>
+        <li id="maximize_app">
+          <ion-icon name="ios-square-outline"></ion-icon>
+        </li>
+        <li id="close_app">
+          <ion-icon name="close"></ion-icon>
+        </li>
+      </ul>
+    </div>
+
+    <div class="pagewrapr">
+
+
+      <!-- splash screen-->
+      <div id="splash_screen">
+        <ion-icon style="font-size: 100px;" name="ios-cloud-upload"></ion-icon>
+      </div>
+      <!-- end of splash screen-->
+
+
+
+      <!-- register screen-->
+      <div id="register_screen">
+        <div>
+          <h3>You need to Register first!</h3>
+          <hr>
+          <div>
+            <input placeholder="Enter a new User ID" name="id">
+            <button>Start</button>
+          </div>
+        </div>
+      </div>
+      <!-- end of register screen-->
+
+
+
+
+      <!-- mainscreen-->
+      <div id="main_screen">
+        
+        <nav id="main_screen_nav">
+          <h3 id="display_name"></h3>
+          <hr color="#222">
+          <ul id="main_screen_nav_buttons">
+            <li upload_tab onclick="ps(); navigate_to_tab('upload_tab');" active_tab>
+              <ion-icon class="list-icon" name="ios-cloud-upload"></ion-icon>Upload
+            </li>
+            <li packages_tab onclick="ps(); navigate_to_tab('packages_tab');">
+              <ion-icon class="list-icon" name="ios-apps"></ion-icon>Packages
+            </li>
+            <li config_tab onclick="ps(); navigate_to_tab('config_tab');">
+              <ion-icon class="list-icon" name="ios-hammer"></ion-icon>Config
+            </li>
+
+          </ul>
+        </nav>
+
+        <main>
+
+
+          <div class="tab" id="upload_tab">
+
+            <div class="files_box">
+              <div class="file_upload_button">
+                <input onclick="ps();" id="files_to_upload" type="file" name="file[]" multiple>
+                <button>Select Files</button>
+              </div>
+              <ul id="upload_files_list">
+                Please select files to upload
+              </ul>
+            </div>
+
+            <div class="upload_footer">
+              <input id="upload_package_name" placeholder="Name the Package" name="id">
+              <button onclick="ps();" id="upload_package_btn">Upload</button>
+            </div>
+
+          </div> <!-- end of upload tab -->
+
+          <div class="tab" id="packages_tab">
+
+            <div class="packages_box">
+              <div class="search_bar">
+                <input id="search_query" placeholder="Search for Package" type="text">
+                <ion-icon onclick="ps();" id="refresh_packages_btn" class="list-icon" name="ios-refresh"></ion-icon>
+              </div>
+              
+
+              <div style="overflow-x:auto;height: 100%;">
+                <table id="packages_list">
+                </table>
+              </div>
+              
+
+            </div>
+
+
+          </div> <!-- end of packages_tab -->
+
+          <div class="tab" id="config_tab">
+            <div class="config_box">
+              <div class="header_bar">
+                <h3>Configuration Data, careful with the keys!</h3>
+              </div>
+              <form  id="config_form"  class="config_form">
+                <span class="label1">Username: </span><br><input name="user_name" class="config_input" type="text"><br>
+                <button onclick="ps(); create_user(this); return false;">Create User</button><br><br>
+                <span class="label1">Server Address: </span><br><input name="server_address" class="config_input" type="text"><br>
+                <button onclick="ps(); update_config_info(this); return false;">Update</button>
+              </form>
+            </div>
+          </div> <!-- end of config tab-->
+          
+
+
+
+        </main> <!-- end of main (tabs holder)-->
+
+
+
+        <div id="overlay">
+          <div class="box">
+          <div id="box_content">
+            ...
+          <div>
+        </div>
+
+
+        </div> <!-- end of main screen-->
+
+
+
+
+
+
+    </div> <!-- end of page wrapper -->
+  </div> <!-- end of container-->
+
+
+  <script src="scripts/util.js"></script>
+  <script src="scripts/title_bar_buttons.js"></script>
+  <script src="scripts/main_screen_nav_buttons.js"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/upload_tab.js"></script>
+  <script src="scripts/packages_tab.js"></script>
+  <script src="scripts/config_tab.js"></script>
+
+  <audio id="audio" src="assets/beep.wav" autostart="false" ></audio>
+
+  <script>
+    function ps() {
+      var sound = document.getElementById("audio");
+      sound.play()
+    }
+  </script>
+</body>
+</html>

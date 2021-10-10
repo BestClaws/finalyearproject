@@ -1,0 +1,2 @@
+read -p "Enter IP Address: " ipaddress
+ssh -t -i aws-key.pem ubuntu@${ipaddress} "cd master; echo {} > data/users.json; python3 src/server.py"

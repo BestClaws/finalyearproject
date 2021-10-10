@@ -1,0 +1,2 @@
+read -p "Enter IP Address: " ipaddress
+ssh -t -i aws-key.pem ubuntu@${ipaddress} "cd slave1; python3 slave1.py"

@@ -1,0 +1,44 @@
+#register_screen {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+#register_screen div {
+    font-size: 12px;
+    font-family: monospace;
+    background: #282828;
+    border-radius: 10px;
+    padding: 25px;
+    display: block;
+    text-align: center;
+
+}
+
+#register_screen div div input {
+
+    margin: 10px;
+    display: block;
+    padding: 6px 48px;
+    height: 40px;
+    line-height: 40px;
+    color: #000;
+    border: none;
+    font-size: 14px;
+    background: #fff;
+    border-radius: 500px;
+    font-size: 14px;
+    font-family: monospace;
+    outline: none;
+}
+
+
+
+#register_screen {
+    background: url('../assets/bgpattern.png');
+}

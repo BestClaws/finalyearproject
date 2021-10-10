@@ -1,0 +1,53 @@
+
+#config_tab {
+    display: flex;
+    flex-direction: column;
+}
+
+.config_box {
+    flex-grow: 1;
+    margin: 25px;
+    font-size: 12px;
+    font-family: monospace;
+    background: #0c0c0c;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+
+.config_box .header_bar {
+    align-items: center;
+    display: flex;
+    background: #141822;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.label1 {
+    margin: 10px;
+}
+
+.config_form {
+    padding: 20px;
+    font-size: 14px;
+}
+
+.config_input, textarea {
+    margin: 10px;
+    padding: 10px;
+    color: #fff;
+    height: 100px;
+    width: 300px;
+    line-height: 40px;
+    border: none;
+    font-size: 14px;
+    background: #fff;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: monospace;
+    outline: none;
+
+    background: #1c1c1c;
+}

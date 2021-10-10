@@ -1,0 +1,21 @@
+{
+  "name": "crook-app",
+  "version": "0.1.0",
+  "description": "crook client app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "keywords": [
+    "crook",
+    "client"
+  ],
+  "author": "Boby",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^7.1.7"
+  },
+  "dependencies": {
+    "formidable": "^1.2.1"
+  }
+}
